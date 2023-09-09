@@ -1,0 +1,68 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "ignorePatterns": ["node_modules/*", "*.json"],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "semi": "error",
+        "eqeqeq": "error",
+        "no-alert": "warn",
+        "no-else-return": "warn",
+        "no-lonely-if": "warn",
+        "no-return-await": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "spaced-comment": ["warn", "always"],
+        "arrow-spacing": [
+            "warn",
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "no-empty": [
+            "error",
+            {
+                "allowEmptyCatch": true
+            }
+        ],
+        "no-console": "error",
+        "quotes": "warn",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": ["variable", "function"],
+                "format": ["PascalCase", "camelCase"],
+                "leadingUnderscore": "allow",
+                "trailingUnderscore": "allow"
+            },
+            {
+                "selector": ["class"],
+                "format": ["PascalCase"],
+                "leadingUnderscore": "allow",
+                "trailingUnderscore": "allow"
+            }
+        ],
+        "no-trailing-spaces": [
+            "error",
+            {
+                "skipBlankLines": true
+            }
+        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "varsIgnorePattern": "^_",
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    }
+}
