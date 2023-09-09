@@ -13,10 +13,9 @@ router2.post("/deepl", async (req, res) => {
     const responseObj = {
         text: translateTxt,
         target_lang: targetLang,
-        source_lang: "EN",
         preserve_formatting: true,
       };
-
+    console.log("Response Object: " + responseObj.target_lang);
     try {
         const response = await fetch("https://api-free.deepl.com/v2/translate", {
             method: "POST",
@@ -55,7 +54,6 @@ router2.post("/deepl-page", async (req, res) => {
     const responseObj = {
         text: translateTxt,
         target_lang: targetLang,
-        source_lang: "EN",
         preserve_formatting: true,
         tag_handling: "html"
       };
