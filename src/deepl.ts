@@ -29,10 +29,17 @@ router2.post("/deepl", async (req, res) => {
         }).then(v => v.json());
 
         console.log(response);
-        if (response)
-            res.status(201).json(response.translations[0].text);
-        else
+        if (response) {
+            const translatedText = response.translations[0].text;
+            
+            // Remove space before question marks and exclamation marks
+            const modifiedText = translatedText.replace(/\s+\?/g, "?").replace(/\s+\!/g, "!");
+            
+            res.status(201).json(modifiedText);
+        } else {
             res.status(404).json("Error translating");
+        }
+        
     } catch (error) {
         console.error(error);
         res.status(500).json("Internal Server Error");
