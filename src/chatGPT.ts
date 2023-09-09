@@ -7,7 +7,7 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
-router.post("/question", async (req, res) => {
+router.post("/chatGPT", async (req, res) => {
     if (!req.body) {
         res.status(422).json("Not all fields provided!");
         return;
