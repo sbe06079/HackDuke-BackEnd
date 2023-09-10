@@ -13,6 +13,7 @@ router2.post("/deepl", async (req, res) => {
     const responseObj = {
         text: translateTxt,
         target_lang: targetLang,
+        source_lang: "EN",
         preserve_formatting: true,
       };
     console.log("Response Object: " + responseObj.target_lang);
@@ -54,6 +55,7 @@ router2.post("/deepl-page", async (req, res) => {
     const responseObj = {
         text: translateTxt,
         target_lang: targetLang,
+        source_lang: "EN",
         preserve_formatting: true,
         tag_handling: "html"
       };
@@ -68,7 +70,6 @@ router2.post("/deepl-page", async (req, res) => {
             body: JSON.stringify(responseObj)
         }).then(v => v.json());
 
-        console.log(response);
         if (response) {
             const translatedText = response.translations[0].text;
             
